@@ -1,0 +1,57 @@
+{% extends 'back/base.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <form class="form-horizontal" method="POST">
+                        {% csrf_token %}
+                        <div class="card-header">
+                            <h4 class="card-title">
+                               {{title}}
+                            </h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Nama : </label>
+                                <div class="col-md-9">
+                                    {{artikel.nama}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Judul : </label>
+                                <div class="col-md-9">
+                                    {{artikel.judul}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Body : </label>
+                                <div class="col-md-9">
+                                    {{artikel.body}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Kategory : </label>
+                                <div class="col-md-9">
+                                    {{artikel.kategory}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-right">
+                            <div class="form-group">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                   <a class="btn btn-info" href="{% url 'tabel_artikel' %}">back</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div> <!-- end card -->
+            </div> <!--  end col-md-6  -->
+    
+        </div> <!-- end row -->
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,53 @@
+{% extends 'back/base.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="toolbar">
+                            <a class="btn btn-sm btn-danger" href="{% url 'tambah_artikel' %}">+artikel</a> &ensp;&ensp;&ensp;&ensp;
+                            <!--Here you can write extra buttons/actions for the toolbar-->
+                        </div>
+                        <table id="bootstrap-table" class="table">
+                            <thead>
+                                <th data-field="state" data-checkbox="true"></th>
+                                <th data-field="id" class="text-center">No</th>
+                                <th data-field="name" data-sortable="true">Nama</th>
+                                <th data-field="salary" data-sortable="true">Judul</th>
+                                <th data-field="country" data-sortable="true">Kategory</th>
+                                <th data-field="city">Date</th>
+                                <th>Action</th>
+                            </thead>
+                            <tbody>
+                                
+                                {% for a in artikel %}
+                                <tr>
+                                    <td></td>
+                                    <td>{{forloop.counter}}</td>
+                                    <td>{{a.nama}}</td>
+                                    <td>{{a.judul}}</td>
+                                    <td>{{a.kategory}}</td>
+                                    <td>{{a.date}}</td>
+                                    <td>
+                                        <a class="btn btn-sm btn-info" href="{% url 'lihat_artikel' a.id %}">lihat</a>
+                                        <a class="btn btn-sm btn-warning" href="{% url 'edit_artikel' a.id %}">edit</a>
+                                        <a onclick="return confirm('delete artikel?');" class="btn btn-sm btn-danger" href="{% url 'delete_artikel' a.id %}">delete</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!--  end card  -->
+            </div> <!-- end col-md-12 -->
+        </div> <!-- end row -->
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+
+{% endblock js %}

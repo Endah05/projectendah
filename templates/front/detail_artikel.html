@@ -1,0 +1,57 @@
+{% extends 'front/base.html' %}
+{% load static %}
+{% block content %}
+<div class="wrapper">
+    <div class="main">
+      <div class="section section-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 ml-auto mr-auto text-center title">
+              <h2>Detail Artikel</h2>
+              <h3 class="title-uppercase"><small>Written by Endah Aulia Nisaulatifah</small></h3>
+            </div>
+          </div>
+          <div class="article">
+            <div class="row">
+              <div class="col-md-8 ml-auto mr-auto">
+                <div class="card card-blog card-plain text-center">
+                  <div class="card-image">
+                    <a href="#pablo">
+                     <!-- <img class="img img-raised" src="{% static 'front/img/sections/bruno-abatti.jpg' %}">-->
+                    </a>
+                  </div>
+                  <div class="card-body">
+                    <div class="card-category">
+                      <span class="badge badge-primary main-tag">{{artikel.kategory}}</span>
+                    </div>
+                    <a href="javascrip: void(0);">
+                      <h3 class="card-title">{{artikel.judul}}</h3>
+                    </a>
+                    <div class="card-description">
+                      <p>{{artikel.body|safe }}</p>
+                    </div>
+                    <div class="card-description">
+                      <p style="color:rgb(248, 17, 9) ;">{{artikel.date}}</p>
+                    </div>
+                  </div>
+                  <a class="btn btn-danger btn-round btn-sm" href="{% url 'home' %}">Back</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+         <!-- <div class="row">
+            <div class="col-md-12">
+              <div class="pull-left">
+                <button class="btn btn-link btn-default btn-move-left btn-sm"> <i class="fa fa-angle-left"></i> Older Posts</button>
+              </div>
+              <div class="pull-right">
+                <button class="btn btn-link btn-default btn-move-right btn-sm">Newer Posts <i class="fa fa-angle-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>-->
+{% endblock content %}

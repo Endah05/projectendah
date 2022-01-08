@@ -1,0 +1,44 @@
+{% extends 'back/base.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="toolbar">
+                            <!--Here you can write extra buttons/actions for the toolbar-->
+                        </div>
+                        <table id="bootstrap-table" class="table">
+                            <thead>
+                                <th data-field="state" data-checkbox="true"></th>
+                                <th data-field="id" class="text-center">No</th>
+                                <th data-field="name" data-sortable="true">Nama</th>
+                                <th data-field="salary" data-sortable="true">Emaill Adress</th>
+                                <th data-field="country" data-sortable="true">Is Staff</th>
+                                
+                                <th data-field="actions" class="td-actions text-right" data-events="operateEvents" data-formatter="operateFormatter">Actions</th>
+                            </thead>
+                            <tbody>
+
+                                {% for l in list_user %}
+                                <tr>
+                                    <td></td>
+                                    <td>{{forloop.counter}}</td>
+                                    <td>{{l.username}}</td>
+                                    <td>{{l.email}}</td>
+                                    <td>{{l.is_staff}}</td>
+                                  
+                                    <td></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!--  end card  -->
+            </div> <!-- end col-md-12 -->
+        </div> <!-- end row -->
+    </div>
+</div>
+{% endblock content %}

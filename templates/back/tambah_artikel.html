@@ -1,0 +1,65 @@
+{% extends 'back/base.html' %}
+{% load static %}
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <form class="form-horizontal" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="card-header">
+                            <h4 class="card-title">
+                               {{title}}
+                            </h4>
+                        </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Judul</label>
+                                <div class="col-md-9">
+                                <!--  <input name="judul" type="text" placeholder="Judul Artikel" class="form-control"> -->
+                                 {{forms_artikel.judul}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Body</label>
+                                <div class="col-md-9">
+                                <!--<textarea name="body" id="" cols="30" rows="10" class="form-control"></textarea>-->
+                                {{forms_artikel.body}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Kategory</label>
+                                <div class="col-md-9">
+                                   {{forms_artikel.kategory}}
+                            </div>
+                        </div>
+                        </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Thumbnail</label>
+                                <div class="col-md-9">
+                                   {{forms_artikel.thumbnail}}
+                            </div>
+                        <div class="card-footer text-right">
+                            <div class="form-group">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                    <button type="submit" class="btn btn-fill btn-info">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div> <!-- end card -->
+            </div> <!--  end col-md-6  -->
+    
+        </div> <!-- end row -->
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+{% endblock js %}
